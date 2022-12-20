@@ -1,10 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { FlatList, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Logo from '../../assets/svgs/sunny.svg'
+import WeatherCard from '../weatherCard/WeatherCard'
+import { hours } from '../../themes/hours'
 
 const HomeBodyContent = () => {
     return (
-        <View style={{ paddingTop: 10 }}>
+        <View style={{ paddingTop: 10,backgroundColor:'#CFF5E7'}}>
             <View style={{paddingTop:10,paddingStart:12}}>
                 <Text style={{ fontWeight: '400' }}>Aralık 18, 12:47</Text>
             </View>
@@ -26,6 +28,16 @@ const HomeBodyContent = () => {
                 <Text style={{fontSize:26}}>
                     Çok Güneşli
                 </Text>
+            </View>
+            <View>
+                <FlatList
+                data={hours}
+                keyExtractor={(item,index)=>item.id+index.toString()}
+                horizontal
+                renderItem={({item,index})=>
+                <WeatherCard hour={item.hour} icon={item.icon} degree={item.degree} />
+                  }
+                />
             </View>
         </View>
     )

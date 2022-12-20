@@ -18,17 +18,17 @@ const HomeNavigator = () => {
     <Tab.Screen
       name={routes.home[0].name}
       component={routes.home[0].component}
-      options={{ tabBarLabel: 'Home' }}
+      options={{ tabBarLabel: 'Bugün' }}
     />
     <Tab.Screen
       name={routes.tomorrow[0].name}
       component={routes.tomorrow[0].component}
-      options={{ tabBarLabel: 'Tomorrow' }}
+      options={{ tabBarLabel: 'Yarın' }}
     />
     <Tab.Screen
       name={routes.twoWeeks[0].name}
       component={routes.twoWeeks[0].component}
-      options={{ tabBarLabel: 'TwoWeeks' }}
+      options={{ tabBarLabel: '14 Gün' }}
     />
   </Tab.Navigator>
   )
