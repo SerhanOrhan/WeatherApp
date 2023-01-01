@@ -1,36 +1,98 @@
 import {  StyleSheet } from 'react-native'
 import React from 'react'
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { routes } from './routes';
+import Tomorrow from '../screens/Tomorrow';
+import { createStackNavigator } from '@react-navigation/stack';
+import MaterialNavigator from './MaterialNavigator';
 
-const Tab = createMaterialTopTabNavigator();
+
+const Stack = createStackNavigator();
 
 const HomeNavigator = () => {
   return (
-    <Tab.Navigator
-    initialRouteName="Feed"
+    <Stack.Navigator
+    initialRouteName="HomeScreen"
     screenOptions={{
       tabBarActiveTintColor: '#e91e63',
-      tabBarLabelStyle: { fontSize: 12 },
+      tabBarLabelStyle: { fontSize: 14 },
       tabBarStyle: { backgroundColor: 'powderblue' },
     }}
   >
-    <Tab.Screen
-      name={routes.home[0].name}
-      component={routes.home[0].component}
-      options={{ tabBarLabel: 'Bugün' }}
+    <Stack.Screen
+      name={"Home"}
+      component={MaterialNavigator}
+      options={{ tabBarLabel: 'Bugün',headerShown:false }}
     />
-    <Tab.Screen
-      name={routes.tomorrow[0].name}
-      component={routes.tomorrow[0].component}
+     <Stack.Screen
+      name={"Search"}
+      component={Tomorrow}
       options={{ tabBarLabel: 'Yarın' }}
     />
-    <Tab.Screen
-      name={routes.twoWeeks[0].name}
-      component={routes.twoWeeks[0].component}
-      options={{ tabBarLabel: '14 Gün' }}
-    />
-  </Tab.Navigator>
+  </Stack.Navigator>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //   <Tab.Navigator
+  //   initialRouteName="HomeScreen"
+  //   tabBar={HomeTabBarContent}
+  //   screenOptions={{
+  //     tabBarActiveTintColor: '#e91e63',
+  //     tabBarLabelStyle: { fontSize: 14 },
+  //     tabBarStyle: { backgroundColor: 'powderblue' },
+  //   }}
+  // >
+  //   <Tab.Screen
+  //     name={routes.home[0].name}
+  //     component={routes.home[0].component}
+  //     options={{ tabBarLabel: 'Bugün' }}
+  //   />
+  //   <Tab.Screen
+  //     name={routes.tomorrow[0].name}
+  //     component={routes.tomorrow[0].component}
+  //     options={{ tabBarLabel: 'Yarın' }}
+  //   />
+  //   <Tab.Screen
+  //     name={routes.twoWeeks[0].name}
+  //     component={routes.twoWeeks[0].component}
+  //     options={{ tabBarLabel: '14 Gün' }}
+  //   />
+  //   <Tab.Screen
+  //     name={"home2"}
+  //     component={HomeTopStackNavigator}
+  //     options={{headherShown:false}}
+  //   />
+  // </Tab.Navigator>
   )
 }
 

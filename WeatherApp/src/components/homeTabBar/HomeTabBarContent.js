@@ -3,12 +3,12 @@ import React from 'react'
 import ToggleButon from './ToggleButon'
 import SearchButton from './SearchButton'
 
-const HomeTabBarContent = () => {
+const HomeTabBarContent = ({navigation}) => {
   return (
     <View style={styles.container}>
       <ToggleButon/>
       <Text>Ankara</Text>
-      <SearchButton/>
+      <SearchButton navigation={navigation}/>
     </View>
   )
 }

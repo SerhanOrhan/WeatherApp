@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-const SearchButton = () => {
+const SearchButton = ({navigation}) => {
   return (
     <View>
-      <Icon name='search' size={25} color="black"/>
+      <Icon name='search' size={25} color="black" onPress={()=> navigation.navigate("Search")}/>
     </View>
   )
 }

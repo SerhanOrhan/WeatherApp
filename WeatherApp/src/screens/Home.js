@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import HomeBodyContent from '../components/homeBody/HomeBodyContent'
 
@@ -6,7 +6,7 @@ import HomeBodyContent from '../components/homeBody/HomeBodyContent'
 const Home = () => {
   return (
     <View>
-      <HomeBodyContent/>
+      <HomeBodyContent />
     </View>
   )
 }
