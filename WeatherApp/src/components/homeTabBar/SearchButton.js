@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 const SearchButton = ({navigation}) => {
   return (
     <View>
-      <Icon name='search' size={25} color="black" onPress={()=> navigation.navigate("Search")}/>
+      <Icon name='search' size={25} color="black" onPress={()=> navigation.navigate("Back")}/>
     </View>
   )
 }

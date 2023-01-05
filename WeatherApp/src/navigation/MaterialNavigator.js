@@ -1,14 +1,12 @@
 import React from 'react'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { routes } from './routes';
-import HomeTabBarContent from '../components/homeTabBar/HomeTabBarContent';
 
 const Tab = createMaterialTopTabNavigator();
 
 const MaterialNavigator = () => {
   return (
     <Tab.Navigator
-    tabBar={HomeTabBarContent}
     initialRouteName="Feed"
     screenOptions={{
       tabBarActiveTintColor: '#e91e63',
