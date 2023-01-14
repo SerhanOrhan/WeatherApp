@@ -3,6 +3,7 @@ import React from 'react'
 import Tomorrow from '../screens/Tomorrow';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeNavigator from './HomeNavigator';
+import LocationCard from '../components/homeTabBar/LocationCard';
 
 
 const Stack = createStackNavigator();
@@ -24,7 +25,7 @@ const Navigator = () => {
     />
      <Stack.Screen
       name={"Back"}
-      component={Tomorrow}
+      component={LocationCard}
       options={{ tabBarLabel: 'Yarın' }}
     />
   </Stack.Navigator>

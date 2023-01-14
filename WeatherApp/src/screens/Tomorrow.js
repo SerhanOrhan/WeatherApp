@@ -1,12 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import LocationCard from '../components/homeTabBar/LocationCard'
+import HomeBodyContent from '../components/homeBody/HomeBodyContent'
 
 const Tomorrow = () => {
   return (
     <View>
       {/* <Text>Tomorrow</Text> */}
-      <LocationCard/>
+      <HomeBodyContent />
     </View>
   )
 }
