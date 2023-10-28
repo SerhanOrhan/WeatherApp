@@ -1,6 +1,6 @@
 import { FlatList, StyleSheet, Text, View,ScrollView,SafeAreaView } from 'react-native'
 import React from 'react'
-import Logo from '../../assets/svgs/sunny.svg'
+import Logo from '../../assets/svgs/sun-sunny.svg'
 import WeatherCard from '../weatherCard/WeatherCard'
 import { hours, precipitation } from '../../themes/hours'
 import { units } from '../../themes/Units'
@@ -19,7 +19,7 @@ const HomeBodyContent = () => {
                 <Text style={styles.bodyText}>
                     10 °
                 </Text>
-                <Logo width={180} height={180} />
+                <Logo width={150} height={150} />
             </View>
             <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around', }}>
                 <View style={{ padding: 0, display: 'flex', alignItems: 'center' }}>

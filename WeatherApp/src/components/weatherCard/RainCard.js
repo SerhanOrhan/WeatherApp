@@ -16,22 +16,23 @@ const RainCard = ({percent,icon,hour}) => {
     )
 }
 const styles = StyleSheet.create({
-    main:{
-        padding:8
-    },
     rainCardContent:{
         display:'flex',
         alignItems:'center',
         justifyContent:'flex-start',
         backgroundColor: '#0D4C92',
-        width:units.width/7.5,
+        width:units.width/7,
         height:units.height/7.5,
-        padding:5,
-        paddingTop:10,
-        borderRadius:20,
-        margin:5
+        padding: 5,
+        marginLeft: 10,
+        marginBottom: 5,
+        borderRadius:20
+
     },
     rainCardText:{
+        display:'flex',
+        alignItems:'center',
+        justifyContent:'center',
         color:'white',
         fontSize:15,
         fontWeight:'500'
