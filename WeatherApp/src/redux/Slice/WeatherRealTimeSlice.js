@@ -9,26 +9,66 @@ const Slice = createSlice({
         minutely: [{
             time: "",
             values: {
-                temperature: 0,
-                temperatureApparent: 0,
-                weatherCode: 1001,
+                cloudBase: 0.00,
+                cloudCeiling: 0.00,
+                cloudCover: 0,
+                dewPoint: 0.00,
+                freezingRainIntensity: 0,
+                humidity: 0,
+                precipitationProbability: 0,
+                pressureSurfaceLevel: 0.00,
+                rainIntensity: 0,
+                sleetIntensity: 0,
+                snowIntensity: 0,
+                temperature: 0.00,
+                temperatureApparent: 0.00,
+                uvHealthConcern: 0,
+                uvIndex: 0,
+                visibility: 0,
+                weatherCode: 0,
+                windDirection: 0.00,
+                windGust: 0.00,
+                windSpeed: 0.00
             }
         }],
-        hourly: [
-            {
+        hourly: [{
                 time: "",
                 values: {
-                    temperature: 0,
+                    cloudBase: 0,
+                    cloudCeiling: 0,
+                    cloudCover: 0,
+                    dewPoint: 0,
+                    evapotranspiration: 0,
+                    freezingRainIntensity: 0,
+                    humidity: 0,
+                    iceAccumulation: 0,
+                    iceAccumulationLwe: 0,
+                    precipitationProbability: 0,
+                    pressureSurfaceLevel: 0,
                     rainAccumulation: 0,
                     rainAccumulationLwe: 0,
                     rainIntensity: 0,
+                    sleetAccumulation: 0,
+                    sleetAccumulationLwe: 0,
+                    sleetIntensity: 0,
+                    snowAccumulation: 0,
+                    snowAccumulationLwe: 0,
+                    snowDepth: 0,
+                    snowIntensity: 0,
+                    temperature: 0,
+                    temperatureApparent: 0,
+                    uvHealthConcern: 0,
+                    uvIndex: 0,
+                    visibility: 0,
                     weatherCode: 0,
+                    windDirection: 0,
+                    windGust: 0,
+                    windSpeed: 0
                 }
-            }
-        ],
+            }],
         daily: [{
-            time:"",
-            values:{
+            time: "",
+            values: {
                 cloudBaseAvg: 0,
                 cloudBaseMax: 0,
                 cloudBaseMin: 0,
@@ -123,33 +163,40 @@ const Slice = createSlice({
             }
         }],
         location: {
-            lat: 0,
-            lon: 0,
-            name: ""
+            lat: 0.00,
+            lon: 0.00,
+            name: "",
+            type: ""
         }
     },
     reducers: {
-        // setMinutely(state, actions) {
-        //     state.author.name = name;
-        //     state.author.surname = surname;
-        // },
-        // setHourly(state, actions) {
-        //     state.author.name = name;
-        //     state.author.surname = surname;
-        // },
         setDaily(state, actions) {
             debugger;
             actions.payload.daily.forEach(element => {
                 state.daily.push(element);
             });
         },
+        setHourly(state, actions) {
+            debugger;
+            actions.payload.hourly.forEach(element => {
+                state.hourly.push(element);
+            });
+        },
+        setMinutely(state, actions) {
+            debugger;
+            actions.payload.minutely.forEach(element => {
+                state.minutely.push(element);
+            });
+        },
         setLocation(state, actions) {
-                state.location.lat =actions.payload.lat;
-                state.location.lon =actions.payload.lon;
-                state.location.name = actions.payload.name;
+            debugger;
+            state.location.lat = actions.payload.lat;
+            state.location.lon = actions.payload.lon;
+            state.location.name = actions.payload.name;
+            state.location.type = actions.payload.type;
         }
     }
 });
 
 export default Slice;
-export const { setLocation,setDaily } = Slice.actions;
+export const { setLocation, setDaily,setHourly,setMinutely } = Slice.actions;
